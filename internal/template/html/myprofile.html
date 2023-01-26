@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/template/css/myprofile.css">
+    <title>My Profile Page</title>
+</head>
+<body>
+    <nav>   
+        <label class="logo">The Forum</label>
+        <ul>
+            <li> <a href="/">Homepage</a></li> 
+            <li> <a href="/create-post">Create Post</a></li>
+            <li> <a href="/logout">Log Out</a></li>
+        </ul>
+  </nav>
+  <h1>Hi, {{.Userinfo.Username}}!</h1>
+  <h2>My Posts:</h2>
+  <div class="post">
+  {{ range .Post }}
+  <fieldset>
+    <legend class="author">{{ .Author }}</legend>
+    <div class="content-limit">
+      <a href="/post/{{ .ID }}">{{ .Title }}</a>
+      <div class="content">
+     
+            {{  .Content }}
+        <br><br>
+        <p class="category">Category: {{ range .CategoriesArray }}{{.}} {{end}}</p> 
+        </div>
+        </div>
+     </fieldset>
+     <br>
+
+{{ end }}
+</div>
+<h2>My Likes:</h2>  
+<div class="post">
+{{ range .LikePost }}
+<fieldset> 
+  
+    <legend class="author">{{ .Author }}</legend>
+    <div class="content-limit">
+        <a href="/post/{{ .ID }}">{{ .Title }}</a>
+        <div class="content">
+     {{.Content}}
+     <br>
+     <button class="btn-like" >{{.Like}}</button>
+     <button class="btn-dislike" >{{.Dislike}}</button>    
+     </div> 
+ </div>
+
+  </fieldset> 
+
+   {{ end }}
+</div>
+</body>
+</html>

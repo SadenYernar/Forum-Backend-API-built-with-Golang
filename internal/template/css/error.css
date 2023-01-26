@@ -1,0 +1,36 @@
+
+    body{
+        font-family: 'JetBrains Mono', monospace;
+        background: #4c4e4d;
+        color: white;
+        font-size: 15px;
+    }
+    .content{
+    width:300px; /* ширина блока */
+    height: 130px; /* высота блока */
+    background: #242524; /* фон блока */
+    border-radius: 10px; /* закругленные углы блока */
+    box-shadow: 2px 5px 5px 0px #000000; /* тень блока */
+    font-family: 'JetBrains Mono', monospace;
+    text-align: center;
+    
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    }
+    .content a{
+        text-decoration: none;
+        color:white;
+        margin-top: 50px;
+    }
+    .content a:hover{
+        color:#717786;
+    }
+    .error-message{
+        margin-top: 20px;    
+    }
+
+  

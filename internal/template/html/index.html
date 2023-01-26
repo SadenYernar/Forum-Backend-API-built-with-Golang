@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/template/js/index.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/template/css/index.css">
+    <title>homepage</title>
+</head>
+<body> 
+    <nav>   
+        <label class="logo">The Forum</label>
+        
+        {{ if .Data.Username  }}
+        <ul>
+            <li> <a href="/myprofile">{{.Data.Username  }}</a></li> 
+            <li> <a href="/create-post">Create Post</a></li>
+            <li> <a href="/logout">Log Out</a></li>
+        </ul>
+    {{ else }}
+    <ul>
+        <li> <a href="/sign-up">Sign Up</a></li>
+        <li> <a href="/sign-in">Sign In</a></li>
+    </ul> 
+  </nav>
+    {{ end }}
+<div class="myfilter">
+    <h4>Select categories:</h4>
+    <div style="visibility:hidden; color:red; " id="chk_option_error">
+        Please select at least one option.
+    </div>
+    <form onsubmit="return handleData()" action="/filter" method="GET"> 
+        <input id="category[]" type="checkbox" name="category" value="Art" >Art</input>
+        <input id="category[]" type="checkbox" name="category" value="Coding" >Coding</input>
+        <input id="category[]" type="checkbox" name="category" value="Music" >Music</input>
+        <input id="category[]" type="checkbox" name="category" value="Sports" >Sport</input>
+        <input id="category[]" type="checkbox" name="category" value="Cooking" >Cooking</input>
+        <input id="category[]" type="checkbox" name="category" value="Other" >Other</input>
+        <input id="category[]" type="checkbox" name="category" value="All" >All</input>
+        <button class="button" type="submit" value="submit">Search</button>
+    </form> 
+</div>
+<br>
+<div class="post">
+    {{ range .Post }}
+      <fieldset>
+        <legend class="author">{{ .Author }}</legend>
+        <div class="content-limit">
+          <a href="/post/{{ .ID }}">{{ .Title }}</a>
+          <div class="content">
+                {{  .Content }}
+            <br><br>
+            <p class="category">Category: {{ range .CategoriesArray }}{{.}} {{end}}</p> 
+            </div>
+            </div>
+         </fieldset>
+         <br>
+
+    {{ end }}
+          
+        <br>
+</div>
+        
+
+    </body>
+</html>
+

@@ -1,0 +1,71 @@
+body{
+    background: #4c4e4d; /* цвет фона страницы */
+    font-family: 'JetBrains Mono', monospace;
+}
+.header{
+    color:white;
+    padding-top: 20px;
+    text-align:center;
+}
+.form{
+    width:300px; /* ширина блока */
+    height: 300px; /* высота блока */
+    background: #242524; /* фон блока */
+    border-radius: 10px; /* закругленные углы блока */
+    margin: 10% auto; /* отступ сверху и выравнивание по середине */
+    box-shadow: 2px 5px 5px 0px #000000; /* тень блока */
+    font-family: 'JetBrains Mono', monospace;
+}
+.form a{
+    text-decoration: none;
+    color:white;
+    margin-top: 50px;
+}
+.form a:hover{
+    color:#717786;
+}
+
+.btn{
+    color:#000000;
+    background-color: #c7c8c7;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 220px;
+    height: 35px;
+    border-radius: 10px;
+    display:inline-block;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+}
+.btn:hover{
+    color:white;
+    background-color:  #4c4e4d;
+
+}
+.btn:active{
+    color:#c7c8c7;
+    background-color: #9da09e;
+}
+
+.field{
+    text-align: center;
+    padding: 35px;
+    margin-top: 50px;
+}
+
+
+.email{
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 220px;
+    height: 35px;
+
+}
+.pswd{
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 220px;
+    height: 35px;
+}
+
+

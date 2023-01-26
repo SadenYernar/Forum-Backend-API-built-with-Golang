@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/template/css/error.css">
+    <title>Error Page :(</title>
+</head>
+<body>
+    <div class="content">
+        <div class="error-message">
+        <p>Something Went Wrong</p>
+         {{if .SpecialMessage}}
+        <p>{{.SpecialMessage}}</p>
+
+        {{ else }}        
+        <p>Error {{.Status}}: {{.Message}}</p>
+
+        {{end}}
+
+        <p>Go Back To <a class="link" href="/">HomePage</a></p>
+        </div>
+       
+    </div>
+</body>
+</html>

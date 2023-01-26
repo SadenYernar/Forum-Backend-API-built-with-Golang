@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/template/css/createPost.css">
+    <title>CreatePost</title>
+</head>
+<body>
+  <nav>       
+    <label class="logo">The Forum</label>
+    <ul>
+        <li> <a href="/">Homepage</a></li>
+        <li> <a href="/logout">Log Out</a></li>
+    </ul>
+</nav>
+
+    <h1>Create Post</h1>
+
+    <form action="/create-post" class="form" method="POST">
+        <div class="field">
+            <textarea class="title" required type="text" placeholder="Title" name="title"></textarea>
+            <br>
+            <textarea class="content" required type="text" placeholder="Content" name="content"></textarea>
+        </div>
+        <div class="choose">
+        <fieldset>
+          <div class="checkbox-content">
+            <legend>Choose a category: </legend>
+            <div>
+              <input type="checkbox" name="categories" value="Coding" />
+              <label for="coding">Coding</label>
+            </div>
+            <div>
+              <input type="checkbox" name="categories" value="Music" />
+              <label for="music">Music</label>
+            </div>
+            <div>
+              <input type="checkbox" name="categories" value="Art" />
+              <label for="art">Art</label>
+            </div>
+            <div>
+              <input type="checkbox"  name="categories" value="Sports" />
+              <label for="sports">Sports</label>
+            </div>
+            <div>
+              <input type="checkbox" name="categories" value="Cooking" />
+              <label for="cooking">Cooking</label>
+            </div>
+            <div>
+                <input type="checkbox" name="categories" value="Other" />
+                <label for="cooking">Other</label>
+            </div>
+</div>
+          </fieldset>
+        </div>
+        <button class="btn" type="submit">Create Post</button>
+    </form>
+
+</body>
+</html>
